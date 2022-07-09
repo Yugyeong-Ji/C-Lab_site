@@ -24,7 +24,21 @@ class NewsroomHome extends Component{
                         <span className="h-64 w-full bg-pink-300 inline-block text-center text-white pt-28 text-4xl rounded-lg hover:bg-pink-700">채용 정보✍️</span>
                     </div>
                 </div>
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <tbody>
+                            <tr class="hover">
+                                <th>1</th>
+                                <td><img src={this.props.img_url} width = "80px" height="80px"/></td>
+                                <td><a href={this.props.url}>{this.props.title}</a></td>
+                                <td>{this.props.summary}</td>
+                                <td>{this.props.date}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
 
         );
     }
