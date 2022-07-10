@@ -1,4 +1,3 @@
-import { response } from 'express';
 import React, {Component} from 'react';
 import NewsroomHome from './NewsroomHome';
 
@@ -19,19 +18,29 @@ class SecurityNews extends Component {
     }
 
     callApi = async() => {
-        const reponse = await fetch("/api/security");
+        const response = await fetch("/api/crawl");
         const body = await response.json();
         return body;
     };
+
     render(){
         const { Security_data } = this.state;
 
         return(
-            <div>
-                <h2>Security News🔒</h2>
+            <div class="overflow-x-auto">
+                <table class="table w-full">
                 <br></br>
-                
+                <tbody>
+                { Security_data.map(post=>{
+                    return <NewsroomHome image_url= {post.image_url} image_alt={post.image_alt} href={post.url} 
+                    title={post.title}
+                    summary={post.summary} date={post.date}/>
+                })
+                }
+                </tbody>
+                </table>
             </div>
-        )
+        );
     }
 }
+export default SecurityNews;

@@ -1,12 +1,13 @@
 const express = require("express");
 const {getHtml} = require("./crawl.js");
 const fs = require("fs");
+
 const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
 const cron = require("node=cron");
-const newsData = JSON.parse(newsJSON);
 
+const newsData = JSON.parse(newsJSON);
 const SecurityNewsJSON = fs.readFileSync("./SecurityNews.json");
 
 app.use(bodyParser.json());
@@ -23,7 +24,7 @@ cron.schedule("*/1 * * * *", async () => {
     await getSecurityAsync();
 });
 
-append.get("/api/security", async(req, res)=> {
+append.get("/api/crawl", async(req, res)=> {
     res.send(SecurityNewsJSON);
 })
 

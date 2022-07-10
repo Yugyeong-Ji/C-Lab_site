@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-class NewsroomHome extends Component{
-    render(){
-        return(
+class NewsroomHome extends Component {
+    render() {
+        return (
             <div className="newsroomhome-wapper">
                 <div className="h-screen bg-gradient-to-r from-blue-400 to-indigo-400 text-white content-center">
                     <h1 className="pt-80 align-middle text-center text-6xl font-bold text-white">📺NEWS ROOM</h1>
@@ -25,23 +25,22 @@ class NewsroomHome extends Component{
                     </div>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="table w-full">
-                        <tbody>
-                            <tr class="hover">
-                                <th>1</th>
-                                <td><img src={this.props.img_url} width = "80px" height="80px"/></td>
-                                <td><a href={this.props.url}>{this.props.title}</a></td>
-                                <td>{this.props.summary}</td>
-                                <td>{this.props.date}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <table class="table w-full">
+        <h2>Security News🔒</h2>
+            <tbody>
+                <tr class="hover">
+                    <th>1</th>
+                    <td><img src={this.props.image_url} width = "80px" height="80px" alt={this.props.image_alt}/></td>
+                    <td><a href={this.props.url}>{this.props.title}</a></td>
+                    <td>{this.props.summary}</td>
+                    <td>{this.props.date}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+                
             </div>
-
-
-        );
+        )
     }
 }
-
 export default NewsroomHome;
