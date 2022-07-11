@@ -23,13 +23,13 @@ getHtml()
 
     $bodyList.each(function( i, elem) {
       ulList[i] = {
-        title: $(this).find('dt a').text(),
+        title: $(this).find('dt a').text().replace(/[\n]/g, "").replace(/[\t]/g, ""),
         url: $(this).find('dt a').attr('href'),
         image_url: $(this).find('dt.photo a img').attr('src'),
         image_alt: $(this).find('dt.photo a img').attr('alt'),
         summary: $(this).find('dd span.lede').text(),
         //.slice(0, -11),
-        date: $(this).find('dd span.date').text()
+        date: $(this).find('dd span.date').text().replace(/[\t]/g, "")
 
       };
       if(i<11){
