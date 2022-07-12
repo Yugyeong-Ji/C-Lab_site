@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import NewsroomHome from './NewsroomHome';
+import SecurityNewsOption from './SecurityNewsOption';
 
 class SecurityNews extends Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class SecurityNews extends Component {
                 <br></br>
                 <tbody>
                 { Security_data.map(post=>{
-                    return <NewsroomHome image_url= {post.image_url} image_alt={post.image_alt} href={post.url} 
+                    return <SecurityNewsOption image_url= {post.image_url} image_alt={post.image_alt} href={post.url} 
                     title={post.title}
                     summary={post.summary} date={post.date}/>
                 })
