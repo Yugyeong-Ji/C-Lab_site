@@ -5,17 +5,17 @@ const fs = require("fs");
 const bodyParser = require("body-parser");
 const app = express();
 const port = process.env.PORT || 5000;
-const cron = require("node=cron");
+const cron = require("node-cron");
 
-const newsData = JSON.parse(newsJSON);
 const SecurityNewsJSON = fs.readFileSync("./SecurityNews.json");
+const newsData = JSON.parse(newsJSON);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 async function getSecurityAsync() {
-    const Security_data = await getSecurity();
-    console.log("SecurityNews = ", Security_data);
+    const SecurityData = await getSecurity();
+    console.log("SecurityNews = ", SecurityData);
     console.log(SecurityNewsJSON.text);
 }
 
@@ -24,7 +24,7 @@ cron.schedule("*/1 * * * *", async () => {
     await getSecurityAsync();
 });
 
-append.get("/api/crawl", async(req, res)=> {
+app.get("/api/SecurityNews", async(req, res)=> {
     res.send(SecurityNewsJSON);
 })
 

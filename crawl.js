@@ -43,4 +43,5 @@ getHtml()
     return data;
   })
   .then(res => log(res));
+  module.exports = {getHtml};
   

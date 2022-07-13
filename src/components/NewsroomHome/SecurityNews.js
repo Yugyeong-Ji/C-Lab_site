@@ -1,37 +1,37 @@
 import React, {Component} from 'react';
-import SecurityNewsOption from './SecurityNewsOption';
+import SecurityNewsOption from './components/NewsroomHome/SecurityNewsOption';
 
 class SecurityNews extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Security_data: [],
+            SecurityData: [],
         };
     }
 
-    componentWillMount(){
+    static getDerivedStateFromProps(){
         this.callApi().then((res)=>{
             this.setState({
-                Security_data: res,
+                SecurityData: res,
             });
         });
     }
 
     callApi = async() => {
-        const response = await fetch("/api/crawl");
+        const response = await fetch("/api/SecurityNews");
         const body = await response.json();
         return body;
     };
 
     render(){
-        const { Security_data } = this.state;
+        const { SecurityData } = this.state;
 
         return(
             <div class="overflow-x-auto">
                 <table class="table w-full">
                 <br></br>
                 <tbody>
-                { Security_data.map(post=>{
+                { SecurityData.map(post=>{
                     return <SecurityNewsOption image_url= {post.image_url} image_alt={post.image_alt} href={post.url} 
                     title={post.title}
                     summary={post.summary} date={post.date}/>
@@ -41,6 +41,9 @@ class SecurityNews extends Component {
                 </table>
             </div>
         );
+    }
+    componentDidMount(){
+        console.log('componentDidMount[Class]');
     }
 }
 export default SecurityNews;

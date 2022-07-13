@@ -13,7 +13,7 @@ class SecurityNewsOption extends Component {
                 </tr>
             </tbody>
         </table>
-        )
+        );
     }
 }
 export default SecurityNewsOption;

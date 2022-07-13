@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SecurityNews from './SecurityNews';
 
 class NewsroomHome extends Component {
     render() {
@@ -25,10 +24,9 @@ class NewsroomHome extends Component {
                         <span className="h-64 w-full bg-pink-300 inline-block text-center text-white pt-28 text-4xl rounded-lg hover:bg-pink-700">채용 정보✍️</span>
                     </div>
                 </div>
-                <SecurityNews></SecurityNews>
                 
             </div>
-        )
+        );
     }
 }
 export default NewsroomHome;
