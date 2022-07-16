@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import NewsroomHome from './components/NewsroomHome/NewsroomHome';
-import SecurityNews from './components/NewsroomHome/SecurityNews';
+import SecurityList from './components/NewsroomHome/SecurityList';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
     <div className="App">
         <Header></Header>
         <NewsroomHome></NewsroomHome>
-        <SecurityNews></SecurityNews>
+        <SecurityList></SecurityList>
         <Footer></Footer>
     </div>
     );

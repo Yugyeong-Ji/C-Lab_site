@@ -23,6 +23,7 @@ getHtml()
 
     $bodyList.each(function( i, elem) {
       ulList[i] = {
+        id: i,
         title: $(this).find('dt a').text().replace(/[\n]/g, "").replace(/[\t]/g, ""),
         url: $(this).find('dt a').attr('href'),
         image_url: $(this).find('dt.photo a img').attr('src'),

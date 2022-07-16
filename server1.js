@@ -13,15 +13,15 @@ const newsData = JSON.parse(newsJSON);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-async function getSecurityAsync() {
-    const SecurityData = await getSecurity();
+async function getHtmlAsync() {
+    const SecurityData = await getHtml();
     console.log("SecurityNews = ", SecurityData);
     console.log(SecurityNewsJSON.text);
 }
 
 cron.schedule("*/1 * * * *", async () => {
     console.log("running a task every two minutes");
-    await getSecurityAsync();
+    await getHtmlAsync();
 });
 
 app.get("/api/SecurityNews", async(req, res)=> {

@@ -23,8 +23,7 @@ class NewsroomHome extends Component {
                     <div className="w-9/12 mx-auto pt-8 cotent-center">
                         <span className="h-64 w-full bg-pink-300 inline-block text-center text-white pt-28 text-4xl rounded-lg hover:bg-pink-700">채용 정보✍️</span>
                     </div>
-                </div>
-                
+                </div>   
             </div>
         );
     }
