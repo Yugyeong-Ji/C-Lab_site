@@ -3,7 +3,7 @@ import data from './ComputerNews.json';
 export default function ComputerList() {
     const ComputerList = data.computer
     return (
-        <section class="NewsTable">
+        <section class="NewsTable" id="Computer">
             <div class="c-container mx-auto">
                 <h1 className="pt-10 pb-10 text-4xl font-bold text-center">Computer🖥️</h1>
                 <table class="hover:border-collapse">

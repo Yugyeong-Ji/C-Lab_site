@@ -3,7 +3,7 @@ import data from './ITNews.json';
 export default function ITList() {
     const ITList = data.IT
     return (
-        <section class="NewsTable">
+        <section class="NewsTable" id="IT">
             <div class="c-container mx-auto">
                 <h1 className="pt-10 pb-10 text-4xl font-bold text-center">IT🤖</h1>
                 <table class="hover:border-collapse">

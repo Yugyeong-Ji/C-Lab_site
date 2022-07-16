@@ -3,7 +3,7 @@ import data from './MobileNews.json';
 export default function MobileList() {
     const MobileList = data.mobile
     return (
-        <section class="NewsTable">
+        <section class="NewsTable" id="Mobile">
             <div class="c-container mx-auto">
                 <h1 className="pt-10 pb-10 text-4xl font-bold text-center">Mobile📲</h1>
                 <table class="hover:border-collapse">
